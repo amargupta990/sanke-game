@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html_bmi</title>
+    <style>
+        body{
+            background-color: #2f2f2f;
+            color: aliceblue;
+        }
+        #submit{
+            margin-left: 10rem;
+        }
+        form{
+            padding:20px;
+            border: 2px solid red;
+            width: 300px;
+        }
+        .same{
+            margin: 10px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+     <form action="">
+        <p><label class="same" for="">Height in cm</label><input id="height"  type="text"></p>
+        <p><label class="same" for="">weight in cm</label><input  id="weight" type="text"></p>
+        <button class="same" id="submit">Calculate</button>
+        <div id="results"></div>
+     </form>
+
+     <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            const height=parseInt(document.querySelector('#height').value);
+            const weight=parseInt(document.querySelector('#height').value);
+            const results=document.querySelector('#results');
+
+            if (height===''||height<0|| isNaN(height)) {
+              results.innerHTML="enter a valid height"  
+            }else if (weight===''||weight<0|| isNaN(weight)) {
+              results.innerHTML="enter a valid weight"  
+            }else{
+                const bmi = (weight / ((height*height)/10000)).toFixed(2);
+              results.innerHTML=`<span>${bmi}</span>`
+              
+            }
+        });
+     </script>
+</body>
+</html>

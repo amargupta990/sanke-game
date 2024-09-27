@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .btn{
+        border: 2px solid black;
+        padding: 30px;
+       
+       }
+       #red{
+        background-color: red; 
+      
+       }
+       #blue{
+        background-color: blue;  
+       
+       }
+       #green{
+        background-color: green;  
+      
+       }
+       #orange{
+        background-color:orange;  
+       
+       }
+       .main{
+        margin-top: 5rem;
+       }
+    </style>
+</head>
+<body>
+  
+        <h1>color Switcher..</h1>
+        <div class="main">
+            <span class="btn" id="red">A</span>
+            <span class="btn" id="blue">B</span>
+            <span class="btn" id="green">C</span>
+            <span class="btn" id="orange">D</span>
+        </div>
+       
+    <script>
+       const buttons = document.querySelectorAll('.btn');
+       const body = document.querySelector("body");
+       const h=document.querySelector("h1");
+      buttons.forEach(function(button){
+        button.addEventListener('click',function(e){
+          if(e.target.id==='red'){
+            body.style.backgroundColor=e.target.id;
+             h.style.color="orange"
+          }
+          if(e.target.id==='blue'){
+            body.style.backgroundColor=e.target.id;
+             h.style.color="black"
+          }
+          if(e.target.id==='green'){
+            body.style.backgroundColor=e.target.id;
+             h.style.color="purple"
+          }
+          if(e.target.id==='orange'){
+            body.style.backgroundColor=e.target.id;
+            h.style.color="white"
+          }
+        })
+      })
+
+    </script>
+</body>
+</html>
